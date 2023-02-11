@@ -1,4 +1,4 @@
-% Beam’s Complete Vibration analysis
+% Beamâ€™s Complete Vibration analysis
 % Shay Kricheli, 2018
 
 clc; clear;
@@ -17,21 +17,21 @@ X = @(s)(0.618*(sin(s)-sinh(s))-0.629*(cos(s)-cosh(s)));
 Y = X(s);
 
 
-% plot(linspace(0,tau,size(T,1)),T(:,1));
-% grid;
-% axis tight;
-% h = ylabel('$T (\tau)$'); set(h,'Interpreter','latex');
-% h = xlabel('$\tau$'); set(h,'Interpreter','latex');
-% set(gca,'fontsize',22);
-% pbaspect([2 1 1]);
+plot(linspace(0,tau,size(T,1)),T(:,1));
+grid;
+axis tight;
+h = ylabel('$T (\tau)$'); set(h,'Interpreter','latex');
+h = xlabel('$\tau$'); set(h,'Interpreter','latex');
+set(gca,'fontsize',22);
+pbaspect([2 1 1]);
 
-% plot(T(:,1),T_dot(:,1));
-% grid;
-% axis tight;
-% h = ylabel('$\frac{dT(\tau)}{d\tau}$'); set(h,'Interpreter','latex');
-% h = xlabel('$T (\tau)$'); set(h,'Interpreter','latex');
-% set(gca,'fontsize',22);
-% pbaspect([1 1 1]);
+plot(T(:,1),T_dot(:,1));
+grid;
+axis tight;
+h = ylabel('$\frac{dT(\tau)}{d\tau}$'); set(h,'Interpreter','latex');
+h = xlabel('$T (\tau)$'); set(h,'Interpreter','latex');
+set(gca,'fontsize',22);
+pbaspect([1 1 1]);
 
 filename = 'testAnimated.gif';
 h = figure;
@@ -57,21 +57,21 @@ set(h,'color','white');
      
  end
 
-% for i=1:6
-%     subplot(3,2,i);
-%     if (i<4)
-%         plot(s, Y*T(9902+3*(i-1)));
-%     elseif (i==4)
-%         plot(s, Y*T(9914));
-%     elseif (i==5)
-%         plot(s, Y*T(9926));
-%     else
-%         plot(s, Y*T(9929));
-%     end
-%     axis([0 4.75 -0.5 0.5]);
-%     grid;
-%     set(gca,'fontsize',22);
-%     h = ylabel('$u_1 (s,\tau)$'); set(h,'Interpreter','latex');
-%     h = xlabel('$s$'); set(h,'Interpreter','latex');
-% %     pbaspect([1 2 2]);
-% end
+for i=1:6
+    subplot(3,2,i);
+    if (i<4)
+        plot(s, Y*T(9902+3*(i-1)));
+    elseif (i==4)
+        plot(s, Y*T(9914));
+    elseif (i==5)
+        plot(s, Y*T(9926));
+    else
+        plot(s, Y*T(9929));
+    end
+    axis([0 4.75 -0.5 0.5]);
+    grid;
+    set(gca,'fontsize',22);
+    h = ylabel('$u_1 (s,\tau)$'); set(h,'Interpreter','latex');
+    h = xlabel('$s$'); set(h,'Interpreter','latex');
+%     pbaspect([1 2 2]);
+end
